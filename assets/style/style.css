@@ -92,7 +92,7 @@ h4 {
     font-size: 1.125rem;
     font-weight: 600;
     line-height: 1.4;
-    color: var (--black);
+    color: var(--black);
 }
 
 p {
@@ -103,7 +103,7 @@ p {
 
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.8 rem;
+    padding: 0.8rem 1.8rem;
     font-family: var(--font-family);
     font-size: 1rem;
     font-weight: 500;
