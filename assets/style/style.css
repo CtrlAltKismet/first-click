@@ -249,3 +249,36 @@ p {
     border-radius: 2px;
     transition: var(--transition);
 }
+
+/* Hero Section */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--gray-600);
+    margin-top: 1rem;
+    max-width: 520px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    flex: 0 0 45%;
+}
