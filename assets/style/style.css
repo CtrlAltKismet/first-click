@@ -365,3 +365,46 @@ p {
     font-size: 0.95rem;
     color: var(--gray-600);
 }
+
+/* How it Works */
+
+.how-it-works {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--orange-400), var(--orange-600));
+    border-radius: 50%;
+}
+
+.step h3 {
+    margin-bottom: 0.5rem;
+}
+
+.step p {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+}
