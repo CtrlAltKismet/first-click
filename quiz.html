@@ -25,10 +25,10 @@
 
         <nav class="main-nav" aria-label="Main Navigation">
             <ul class="nav-list">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="learn.html" class="nav-link">Learn</a></li>
                 <li><a href="practice.html" class="nav-link">Practice</a></li>
-                <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                <li><a href="quiz.html" class="nav-link active">Quiz</a></li>
                 <li><a href="help.html" class="nav-link">Help</a></li>
             </ul>
         </nav>
@@ -41,7 +41,48 @@
 </header>
 
 
-<!-- Main Section-->
+<!-- Quiz -->
+
+<main class="quiz-page">
+
+    <!--Quiz Hero-->
+    <section class="quiz-hero">
+        <h1>Digital Skills Quiz</h1>
+        <p class="quiz-subtitle">
+            Test your knowledge of basic computer skills. This quiz contains 30 questions covering security, internet use, file management, and everyday computer tasks.</p>
+    </section>
+
+    <!-- Quiz Container -->
+    <section class="quiz-section">
+
+        <div class="quiz-card">
+
+            <!--Progress-->
+            <div class="quiz-progress">
+                <span id="question-number">Question 1</span>
+                <span class="quiz-score">Score: <span id="score">0</span>
+            </div>
+
+            <!-- Question -->
+            <h2 id="question-text">Question text appears here</h2>
+
+            <!-- Answers -->
+             <div id="answers" class="quiz-answers">
+                <button class="quiz-answer">Answer A</button>
+                <button class="quiz-answer">Answer B</button>
+                <button class="quiz-answer">Answer C</button>
+                <button class="quiz-answer">Answer D</button>
+             </div>
+
+            <!-- Next Button -->
+            <div class="quiz-actions">
+                <button id="next-btn" class="btn btn-primary">
+                    Next Question
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
 
 
 
