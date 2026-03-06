@@ -1,0 +1,24 @@
+{
+  "name": "first-click",
+  "version": "1.0.0",
+  "description": "An interactive website to teach you basic digital skills including quizzes, interactive games and information for all your digital beginner's needs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CtrlAltKismet/first-click.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CtrlAltKismet/first-click/issues"
+  },
+  "homepage": "https://github.com/CtrlAltKismet/first-click#readme",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
