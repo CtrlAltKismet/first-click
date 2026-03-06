@@ -65,7 +65,13 @@
     const input = document.getElementById("searchInput");
 
     // Wikipedia API
-    button.addEventListener("click", searchWikipedia);
+
+    // Button search
+    button.addEventListener("click", function() {
+            searchWikipedia();
+    });
+
+    // Return key search
     input.addEventListener("keydown", function(event) {
 
         if (event.key === "Enter") {
