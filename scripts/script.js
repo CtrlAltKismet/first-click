@@ -62,9 +62,16 @@
 
     // Help page search button
     const button = document.getElementById("searchButton");
+    const input = document.getElementById("searchInput");
 
     // Wikipedia API
     button.addEventListener("click", searchWikipedia);
+    input.addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            searchWikipedia();
+        }
+    });
 
     function searchWikipedia() {
 
