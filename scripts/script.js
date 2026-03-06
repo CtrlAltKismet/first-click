@@ -73,9 +73,9 @@
         }
     });
 
-    function searchWikipedia() {
+    function searchWikipedia(term) {
 
-    const searchTerm = document.getElementById("searchInput").value;
+    const searchTerm = term || document.getElementById("searchInput").value.trim();
     const resultBox = document.getElementById("result");
 
     // Prevent empty searches
@@ -93,6 +93,12 @@
     fetch(url)
         .then(response => response.json())
         .then(data => {
+
+            // Detect disambiguation pages
+            if (data.type === "disambiguation") {
+                searchWikipedia("computer " + searchTerm);
+                return;
+            }
 
             // Check if a definition exists
             if (data.extract) {
