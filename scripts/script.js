@@ -60,12 +60,49 @@
         startAuto();
     });
 
-        // Help page search button
+    // Help page search button
     const button = document.getElementById("searchButton");
-    
-    button.addEventListener("click", searchWikipedia);
-    function searchWikipedia() {
-        const searchTerm = document.getElementById("searchInput").value;
 
-        console.log(searchTerm);
-    }
+    // Wikipedia API
+    button.addEventListener("click", searchWikipedia);
+
+    function searchWikipedia() {
+
+    const searchTerm = document.getElementById("searchInput").value;
+
+    const url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchTerm;
+
+    // Request data from API
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+
+            const resultBox = document.getElementById("result");
+
+            // Check if a definition exists
+            if (data.extract) {
+
+                resultBox.innerHTML = `
+                    <div class="feature-card">
+                        <h3>${data.title}</h3>
+                        <p>${data.extract}</p>
+                    </div>
+                `;
+
+            } else {
+
+                // Error handling
+                resultBox.innerHTML = `
+                    <div class="feature-card">
+                        <p>Sorry, we couldn't find an explanation for that word. Try another one.</p>
+                    </div>
+                `;
+
+            }
+
+        });
+
+}
+
+
+
