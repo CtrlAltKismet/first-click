@@ -575,7 +575,46 @@ p {
     box-shadow: var(--shadow-md);
 }
 
+/* Progress Bar */
 
+.quiz-progress {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+}
+
+/* Question */
+
+#question-text {
+    margin-bottom: 1.75rem;
+}
+
+/* Answer Grid */
+
+.quiz-answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Answer Buttons */
+
+.quiz-answer {
+    padding: 0.9rem 1rem;
+    border-radius: var(--radius);
+    border: 2px solid var(--gray-200);
+    background: var(--off-white);
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+}
+
+.quiz-answer:hover {
+    border-color: var(--orange-500);
+    background: var(--orange-50);
+}
 
 /* Footer Section */
 
