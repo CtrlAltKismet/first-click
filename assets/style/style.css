@@ -48,6 +48,9 @@ body {
     color: var(--black);
     background-color: var(--white);
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 img {
@@ -532,6 +535,7 @@ p {
     background-color: var(--gray-800);
     color: var(--gray-200);
     padding-top: 3rem;
+    margin-top: auto;
 }
 
 .footer-inner {
