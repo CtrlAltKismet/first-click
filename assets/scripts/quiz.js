@@ -22,7 +22,7 @@ function showQuestion() {
     questionText.textContent = currentQuestion.question;
 
     questionNumber.textContent = 
-    `Question ${currentQuestionIndex + 1}`;
+    `Question ${currentQuestionIndex + 1} of ${quizQuestions.length}`;
 
     answersContainer.innerHTML = "";
 
