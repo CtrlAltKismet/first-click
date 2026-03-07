@@ -33,8 +33,21 @@ function showQuestion() {
 
         button.classList.add("quiz-answer");
 
+        button.addEventListener("click", () => selectAnswer(answer));
+
         answersContainer.appendChild(button);
     });
+}
+
+function selectAnswer(selectedAnswer) {
+    
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+
+    const isCorrect = checkAnswer(selectedAnswer, currentQuestion.correct);
+
+    score = updateScore(score, isCorrect);
+
+    scoreDisplay.textContent = `${score}`;
 }
 
 // Checks if answer selected is correct
