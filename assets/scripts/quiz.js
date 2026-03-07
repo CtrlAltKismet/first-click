@@ -15,6 +15,22 @@ const nextButton = document.getElementById("next-btn");
 const questionNumber = document.getElementById("question-number");
 const progressFill = document.getElementById("progress-fill");
 
+// Shuffle answers to randomise selection
+
+function shuffleArray(array) {
+    const shuffled = [...array];
+
+    for (let i = shuffled.length -1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i +1));
+
+        const temp = shuffled[i];
+        shuffled[i] = shuffled[j];
+        shuffled[j] = temp;
+    }
+
+    return shuffled;
+}
+
 // Display a question
 
 function showQuestion() {
@@ -27,7 +43,8 @@ function showQuestion() {
 
     answersContainer.innerHTML = "";
 
-    currentQuestion.answers.forEach(answer => {
+    const shuffledAnswers = shuffleArray(currentQuestion.answers);
+        shuffledAnswers.forEach(answer => {
         const button = document.createElement("button");
 
         button.textContent = answer;
