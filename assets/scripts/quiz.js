@@ -1,8 +1,11 @@
 // Imported quiz questions
 const quizQuestions = require("./quizQuestions.js");
 
-
 // Quiz test
+
+let currentQuestionIndex = 0;
+let score = 0;
+
 
 // Checks if answer selected is correct
 // Returns true if correct, false if not
