@@ -14,6 +14,29 @@ const scoreDisplay = document.getElementById("score");
 const nextButton = document.getElementById("next-btn");
 const questionNumber = document.getElementById("question-number");
 
+// Display a question
+
+function showQuestion() {
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+
+    questionText.textContent = currentQuestion.question;
+
+    questionNumber.textContent = 
+    `Question ${currentQuestionIndex + 1}`;
+
+    answersContainer.innerHTML = "";
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+
+        button.textContent = answer;
+
+        button.classList.add("quiz-answer");
+
+        answersContainer.appendChild(button);
+    });
+}
+
 // Checks if answer selected is correct
 // Returns true if correct, false if not
 
