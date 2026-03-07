@@ -855,3 +855,14 @@ quiz.answer.selected {
         padding: 1.5rem;
     }
 }
+
+/* Media Query for Mobile Quiz */
+@media (max-width: 600px) {
+    .quiz-card {
+        padding: 1.75rem;
+    }
+
+    .quiz-answers {
+        grid-template-columns: 1fr;
+    }
+}
