@@ -39,6 +39,8 @@ function showQuestion() {
     });
 }
 
+// Answer changes colour depending if it is correct or incorrect
+
 function selectAnswer(selectedAnswer) {
     
     const currentQuestion = quizQuestions[currentQuestionIndex];
@@ -87,6 +89,22 @@ function updateScore (score, isCorrect) {
 function nextQuestion(currentIndex) {
     return currentIndex + 1;
 }
+
+// Next button moves onto the next question so long as there is a question after current
+
+nextButton.addEventListener("click", () => {
+
+    currentQuestionIndex = nextQuestion(currentQuestionIndex);
+
+    if (currentQuestionIndex < quizQuestions.length) {
+        showQuestion();
+        nextButton.style.display = "none";
+    } else {
+        questionText.textContent = "Quiz Complete!";
+        answersContainer.innerHTML = "";
+        nextButton.style.display = "none";
+    }
+});
 
 // Start the quiz
 
