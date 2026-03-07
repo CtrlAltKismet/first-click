@@ -102,7 +102,8 @@ nextButton.addEventListener("click", () => {
     } else {
         questionText.textContent = "Quiz Complete!";
         answersContainer.innerHTML = 
-        `<h3>Your final score is ${score} out of ${quizQuestions.length}</h3>`;
+        `<h3>Your final score is ${score} out of ${quizQuestions.length}</h3>
+        <button id="restart-btn" class="btn btn-primary">Restart Quiz</button>`;
         nextButton.style.display = "none";
         questionNumber.textContent = "";
     }
