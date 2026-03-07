@@ -58,6 +58,10 @@ function nextQuestion(currentIndex) {
     return currentIndex + 1;
 }
 
+// Start the quiz
+
+showQuestion();
+
 module.exports = {
     checkAnswer,
     updateScore,
