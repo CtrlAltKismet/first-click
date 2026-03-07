@@ -106,10 +106,20 @@ nextButton.addEventListener("click", () => {
         <button id="restart-btn" class="btn btn-primary">Restart Quiz</button>`;
         nextButton.style.display = "none";
         questionNumber.textContent = "";
-    }
+
+        document.getElementById("restart-btn").addEventListener("click", () => {
+            currentQuestionIndex = 0;
+            score = 0;
+            scoreDisplay.textContent = " 0";
+            showQuestion();
+    });
+}
+
 });
 
 // Start the quiz
+
+nextButton.style.display = "none";
 
 showQuestion();
 
