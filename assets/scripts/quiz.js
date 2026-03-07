@@ -13,6 +13,7 @@ const answersContainer = document.getElementById("answers");
 const scoreDisplay = document.getElementById("score");
 const nextButton = document.getElementById("next-btn");
 const questionNumber = document.getElementById("question-number");
+const progressFill = document.getElementById("progress-fill");
 
 // Display a question
 
@@ -37,7 +38,14 @@ function showQuestion() {
 
         answersContainer.appendChild(button);
     });
+
+    // Update progress bar
+    const progressPercent =
+    ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
+
+    progressFill.style.width = progressPercent + "%";
 }
+
 
 // Answer changes colour depending if it is correct or incorrect
 
