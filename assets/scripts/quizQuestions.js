@@ -32,3 +32,5 @@ const quizQuestions = [
         correct: "To protect your computer from malicious software"
     }
 ];
+
+export default quizQuestions;

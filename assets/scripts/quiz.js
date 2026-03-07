@@ -1,5 +1,5 @@
 // Imported quiz questions
-const quizQuestions = require("./quizQuestions.js");
+import quizQuestions from "./quizQuestions.js";
 
 // Quiz test
 
