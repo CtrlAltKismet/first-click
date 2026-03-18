@@ -100,6 +100,35 @@
             </section>
         </div>
 
+        <!-- Save As Window -->
+        
+        <section class="practice-window practice-modal hidden" id="saveModal">
+            <div class="window-top-bar">
+                <span>💾 Save As</span>
+            </div>
+
+            <div class="window-body">
+                <h3>Select a folder</h3>
+
+                <div class="folder-path-options">
+                    <button type="button" class="folder-btn" data-folder="Documents">📁 Documents</button>
+                    <button type="button" class="folder-btn" data-folder="Digital Skills for Beginners">📁 Digital Skills for Beginners</button>
+                    <button type="button" class="folder-btn" data-folder="Homework">📁 Homework</button>
+                </div>
+
+                <p id="selectedPath" class="selected-path">Selected path: None</p>
+
+                <label for="fileNameInput">File name</label>
+                <input type="text" id="fileNameInput" name="fileNameInput" placeholder="Enter file name">
+
+                <div class="modal-actions">
+                    <button id="saveFileBtn" class="primary-btn">Save File</button>
+                    <button id="closeSaveModalBtn" class="secondary-btn" type="button">Cancel</button>
+                </div>
+
+                <p id="saveMessage" class="form-message" aria-live="polite"></p>
+            </div>
+        </section>
 
     </section>
 </main>
