@@ -673,6 +673,60 @@ p {
     color: var(--gray-600);
 }
 
+/* Practice Page */
+
+.practice-page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+}
+
+.practice-hero {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.practice-hero-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.practice-hero-content p {
+    margin-top: 1rem;
+    color: var(--gray-600);
+    font-size: 1.05rem;
+}
+
+.practice-task-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.practice-instructions-card,
+.practice-window,
+.results-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.practice-instructions-card {
+    padding: 2rem;
+}
+
+.practice-instructions-card h2 {
+    margin-bottom: 0.75rem;
+}
+
+.task-details {
+    margin-top: 1.25rem;
+    padding: 1rem;
+    background-color: var(--orange-50);
+    border: 1px solid var(--orange-100);
+    border-radius: var(--radius);
+}
+
 /* Footer Section */
 
 .site-footer {
