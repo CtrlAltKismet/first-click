@@ -727,6 +727,48 @@ p {
     border-radius: var(--radius);
 }
 
+.task-details p + p {
+    margin-top: 0.5rem;
+}
+
+.practice-progress {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--orange-600);
+}
+
+.practice-workspace {
+    display: grid;
+    gap: 2rem;
+}
+
+.practice-window {
+    overflow: hidden;
+}
+
+.window-top-bar {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 0.9rem 1.25rem;
+    background: linear-gradient(135deg, var(--orange-400), var(--orange-600));
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.01rem;
+}
+
+.window-body {
+    padding: 1.5rem;
+}
+
+.document-preview {
+    padding: 1.5rem;
+    background-color: var(--off-white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+}
+
 /* Footer Section */
 
 .site-footer {
