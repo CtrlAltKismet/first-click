@@ -60,7 +60,7 @@
         <div class="practice-instructions-card">
             <h2>Task Scenario</h2>
             <p>
-                You are applying for a job. Your task if to save your cover letter in the correct folder and then send it to an employer by email.
+                You are applying for a job. Your task is to save your cover letter in the correct folder and then send it to an employer by email.
             </p>
 
             <div class="task-details">
@@ -108,25 +108,47 @@
             </div>
 
             <div class="window-body">
-                <h3>Select a folder</h3>
+                <div class="explorer-toolbar">
+                    <button id="backFolderBtn" class="btn btn-secondary" type="button">Back</button>
+                    <p class="explorer-title">File Explorer</p>
+                </div>
 
-                <div class="folder-navigation">
-                    <p class="folder-instructions">Click through the folders to choose where to save your file.</p>
-                    
+                <div class="explorer-path-bar">
+                    <span class="path-label">Location:</span>
+                    <span id="explorerPath">This PC</span>
+                </div>
+
+                <div class="explorer-window">
+                    <div class="explorer-sidebar">
+                        <p><strong>Quick Access</strong></p>
+                        <ul>
+                            <li>Desktop</li>
+                            <li>Documents</li>
+                            <li>Downloads</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="explorer-main">
+                    <p class="folder-instructions">
+                        Single click to select a folder. Double click to open it.
+                    </p>
+
                     <div id="folderView" class="folder-view">
                         <button type="button" class="folder-btn" data-folder="Documents">📁 Documents</button>
                     </div>
                 </div>
+            </div>
 
-                <p id="selectedPath" class="selected-path">Selected path: None</p>
+            <p id="selectedPath" class="selected-path">Selected path: None</p>
 
-                <label for="fileNameInput">File name</label>
-                <input type="text" id="fileNameInput" name="fileNameInput" placeholder="Enter file name">
+            <label for="fileNameInput">File name</label>
+            <input type="text" id="fileNameInput" name="fileNameInput" placeholder="Enter file name">
 
-                <div class="modal-actions">
-                    <button id="saveFileBtn" class="btn primary-btn">Save File</button>
-                    <button id="closeSaveModalBtn" class="secondary-btn" type="button">Cancel</button>
-                </div>
+            <div class="modal-actions">
+                <button id="saveFileBtn" class="btn primary-btn">Save File</button>
+                <button id="closeSaveModalBtn" class="secondary-btn" type="button">Cancel</button>
+            </div>
 
                 <p id="saveMessage" class="form-message" aria-live="polite"></p>
             </div>
