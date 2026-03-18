@@ -773,6 +773,74 @@ p {
     margin-top: 1rem;
 }
 
+.explorer-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.explorer-title {
+    font-weight: 600;
+    color: var(--gray-800);
+}
+
+.explorer-path-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--off-white);
+    border: 1px sold var(--gray-200);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+}
+
+.path-label {
+    font-weight: 600;
+    color: var(--gray-800);
+}
+
+.explorer-window {
+    display: grid;
+    grid-template-columns: 220 px 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    min-height: 280px;
+}
+
+.explorer-sidebar {
+    padding: 1rem;
+    background-color: var(--off-white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+}
+
+.explorer-sidebar ul {
+    list-style: none;
+    margin-top: 0.75rem;
+}
+
+.explorer-sidebar li + li {
+    margin-top: 0.5rem;
+}
+
+.explorer-sidebar li {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+}
+
+.explorer-main {
+    padding: 1rem;
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+}
+
+
+
 .folder-btn {
     display: flex;
     flex-direction: column;
