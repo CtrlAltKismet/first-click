@@ -886,9 +886,11 @@ p {
     margin-top: 0.75rem;
 }
 
-.hidden {
+/* !!!! REMOVE THIS COMMENT -- COMMENTED OUT TO SEE PAGE STYLES !!!! */
+
+/* .hidden {
     display: none;
-}
+} */ 
 
 /* Footer Section */
 

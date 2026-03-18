@@ -110,10 +110,12 @@
             <div class="window-body">
                 <h3>Select a folder</h3>
 
-                <div class="folder-path-options">
-                    <button type="button" class="folder-btn" data-folder="Documents">📁 Documents</button>
-                    <button type="button" class="folder-btn" data-folder="Digital Skills for Beginners">📁 Digital Skills for Beginners</button>
-                    <button type="button" class="folder-btn" data-folder="Homework">📁 Homework</button>
+                <div class="folder-navigation">
+                    <p class="folder-instructions">Click through the folders to choose where to save your file.</p>
+                    
+                    <div id="folderView" class="folder-view">
+                        <button type="button" class="folder-btn" data-folder="Documents">📁 Documents</button>
+                    </div>
                 </div>
 
                 <p id="selectedPath" class="selected-path">Selected path: None</p>
@@ -151,7 +153,7 @@
                     <textarea id="messageInput" name="messageInput" rows="8" placeholder="Write your email here"></textarea>
 
                     <div class="email-actions">
-                        <button id="attachFileBtn" class="secondary-btn" type="button">Attach Saved File</button>
+                        <button id="attachFileBtn" class="btn secondary-btn" type="button">Attach Saved File</button>
                         <p id="attachmentStatus" class="attachment-status">No file attached</p>
                     </div>
 
