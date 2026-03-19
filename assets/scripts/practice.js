@@ -119,6 +119,17 @@ document.addEventListener("DOMContentLoaded", function () {
         emailSection.scrollIntoView({ behavior: "smooth" });
     });
 
+    // Reveals email form when user preses 'Compose'
+
+    composeEmailBtn.addEventListener("click", () => {
+        emailForm.classList.remove("hidden");
+        emailMessage.textContent = "";
+    });
+
+    // Attachment button logic
+
+    
+
     // Render folders in current location
     function renderFolders() {
         folderView.innerHTML = "";
