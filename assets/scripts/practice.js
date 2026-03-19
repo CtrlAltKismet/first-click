@@ -43,6 +43,26 @@ document.addEventListener("DOMContentLoaded", function ()) {
                 updatePath();
                 renderFolders();
             });
-        })
+
+            folderView.appendChild(btn);
+        });
     }
+
+    // Update Path Bar
+    function updatePath() {
+        explorerPath.textContent = currentPath.join(" > ");
+    }
+
+    // Back Button
+    const backBtn = document.getElementById("backFolderBtn");
+
+    backBtn.addEventListener("click", () => {
+        if (currentPath.length > 1) {
+            currentPath.pop();
+            selectedFolder = null;
+            updatePath();
+            renderFolders();
+            selectedPathText.textContent = "Selected folder: None";
+        }
+    });
 }
