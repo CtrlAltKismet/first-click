@@ -147,16 +147,26 @@ document.addEventListener("DOMContentLoaded", function () {
         const recipient = recipientInput.value.trim();
         const subject = subjectInput.value.trim();
         const message = messageInput.value.trim();
-        const lowerMessage = message.toLowerCase();
 
         const validRecipient = "employer@clickstartmail.com";
         const hasValidRecipient = recipient === validRecipient;
         const hasSubject = subject !== "";
-        const hasMessage = message !== "";
-        const hasSignOff =
-            lowerMessage.includes("Kind regards") ||
-            lowerMessage.includes("Yours sincerely") ||
-            lowerMessage.includes("Best regards");
+
+        const messageLines = message
+            .split("\n")
+            .map(line => line.trim())
+            .filter(line => line !== "");
+
+        const lastLine = messageLines.length > 0
+            ? messageLines[messageLines.length - 1].toLowerCase()
+            : "";
+
+        const signOffPhrases = ["Kind regards", "Yours sincerely", "Best regards"];
+        const hasSignOff = signOffPhrases.some(phrase => lastLine.startsWith(phrase));
+
+        const hasMainMessage = hasSignOff
+            ? messageLines.length > 1
+            : messageLines.length > 0;
 
         emailMessage.textContent = "";
 
@@ -166,7 +176,19 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (!hasMessage) {
+        if (!hasSubject) {
+            emailMessage.textContent = "Please enter a subject line.";
+            practiceState.subjectFirstTry = false;
+            return;
+        }
+
+        if (!hasMainMessage) {
+            emailMessage.textContent = "Please write the main part of your email message.";
+            practiceState.messageFirstTry = false;
+            return;
+        }
+
+        if (!hasSignOff) {
             emailMessage.textContent = "Please include a sign-off such as 'Kind regards', 'Best regards' or 'Yours sincerely'.";
             practiceState.signOffFirstTry = false;
             return;
@@ -178,30 +200,29 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
         
-        if (practiceState.recipientFirstTry) {
-            practiceState.score += 1;
-        }
+    if (practiceState.recipientFirstTry) {
+        practiceState.score += 1;
+    }
 
-        if (practiceState.subjectFirstTry) {
-            practiceState.score += 1;
-        }
+    if (practiceState.subjectFirstTry) {
+        practiceState.score += 1;
+    }
 
-        if (practiceState.messageFirstTry) {
-            practiceState.score += 1;
-        }
+    if (practiceState.messageFirstTry) {
+        practiceState.score += 1;
+    }
 
-        if (practiceState.signOffFirstTry) {
-            practiceState.score += 1;
-        }
+    if (practiceState.signOffFirstTry) {
+        practiceState.score += 1;
+    }
 
-        if (practiceState.attachmentFirstTry) {
-            practiceState.score += 1;
-        }
+    if (practiceState.attachmentFirstTry) {
+        practiceState.score += 1;
+    }
 
-        practiceState.emailSent = true;
-
-        showResults();
-    });
+    practiceState.emailSent = true;
+    showResults();
+});
 
 
     // Render folders in current location
