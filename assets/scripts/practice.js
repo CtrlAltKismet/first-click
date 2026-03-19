@@ -26,6 +26,15 @@ document.addEventListener("DOMContentLoaded", function ()) {
             const btn = document.createElement("button");
             btn.classList.add("folder-btn");
             btn.textContent = "📁 " + folder;
+
+            // SINGLE CLICK = select
+            btn.addEventListener("click", () => {
+                document.querySelectorAll(".folder-btn").forEach(b => b.classList.remove ("selected"));
+                btn.classList.add("selected");
+                selectedFolder = folder;
+
+                selectedPathText.textContent = "Selected folder: " + [...currentPath, folder].join(" > ");
+            });
         })
     }
 }
