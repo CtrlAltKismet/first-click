@@ -91,6 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
         saveModal.classList.add("hidden");
         emailSection.classList.remove("hidden");
         practiceProgress.textContent = "Step 2 of 2: Send your email.";
+        documentSection.classList.add("hidden");
+        emailSection.scrollIntoView({ behavior: "smooth" });
     });
 
     // Render folders in current location
