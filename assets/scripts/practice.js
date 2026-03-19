@@ -139,6 +139,71 @@ document.addEventListener("DOMContentLoaded", function () {
         attachmentStatus.textContent = "Attached: Cover_Letter_V1";
     });
 
+    // Email Validation
+
+    emailForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const recipient = recipientInput.value.trim();
+        const subject = subjectInput.value.trim();
+        const message = messageInput.value.trim();
+        const lowerMessage = message.toLowerCase();
+
+        const validRecipient = "employer@clickstartmail.com";
+        const hasValidRecipient = recipient === validRecipient;
+        const hasSubject = subject !== "";
+        const hasMessage = message !== "";
+        const hasSignOff =
+            lowerMessage.includes("Kind regards") ||
+            lowerMessage.includes("Yours sincerely") ||
+            lowerMessage.includes("Best regards");
+
+        emailMessage.textContent = "";
+
+        if (!hasValidRecipient) {
+            emailMessage.textContent = "Please enter the correct recipient email address.";
+            practiceState.recipientFirstTry = false;
+            return;
+        }
+
+        if (!hasMessage) {
+            emailMessage.textContent = "Please include a sign-off such as 'Kind regards', 'Best regards' or 'Yours sincerely'.";
+            practiceState.signOffFirstTry = false;
+            return;
+        }
+
+        if (!practiceState.fileAttached) {
+            emailMessage.textcontent = "Please attach your saved cover letter before sending.";
+            practiceState.attachmentFirstTry = false;
+            return;
+        }
+        
+        if (practiceState.recipientFirstTry) {
+            practiceState.score += 1;
+        }
+
+        if (practiceState.subjectFirstTry) {
+            practiceState.score += 1;
+        }
+
+        if (practiceState.messageFirstTry) {
+            practiceState.score += 1;
+        }
+
+        if (practiceState.signOffFirstTry) {
+            practiceState.score += 1;
+        }
+
+        if (practiceState.attachmentFirstTry) {
+            practiceState.score += 1;
+        }
+
+        practiceState.emailSent = true;
+
+        showResults();
+    });
+
+
     // Render folders in current location
     function renderFolders() {
         folderView.innerHTML = "";
