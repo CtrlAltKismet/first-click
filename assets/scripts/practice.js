@@ -73,8 +73,23 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        
-    })
+        // Award marks only if correct on first try
+
+        if (practiceState.folderFirstTry) {
+            practiceState.score += 1;
+        }
+
+        if (practiceState.fileNameFirstTry) {
+            practiceState.score += 1;
+        }
+
+        practiceState.fileSaved = true;
+
+        saveMessage.textContent = "File saved successfully.";
+        saveModal.classList.add("hidden");
+        emailSection.classList.remove("hidden");
+        practiceProgress.textContent = "Step 2 of 2: Send your email.";
+    });
 
     // Render folders in current location
     function renderFolders() {
