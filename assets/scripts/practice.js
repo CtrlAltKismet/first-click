@@ -40,6 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
         folderFirstTry: true,
         fileNameFirstTry: true,
         fileSaved: false,
+
+        recipientFirstTry: true,
+        subjectFirstTry: true,
+        messageFirstTry: true,
+        signOffFirstTry: true,
+        attachmentFirstTry: true,
+
+        fileAttached: false,
+        emailSent: false
     };
 
     // Folder structure (fake file system)
