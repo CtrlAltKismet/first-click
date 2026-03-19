@@ -43,13 +43,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     saveFileBtn.addEventListener("click", () => {
-        
         const fileName = fileNameInput.value.trim();
 
-        // Checks the correct folder
         const correctPath = ["This PC", "Documents", "Digital Skills for Beginners", "Homework"];
-        const isCorrectFolder = JSON.stringify(currentPath) === JSON.stringify(correctPath);
-    });
+        const isCorrectFolder = JSON. stringify(currentPath) === JSON.stringify(correctPath);
+        const isCorrectFileName = fileName === "Cover_Letter_V1";
+
+        // Reset message each time
+        saveMessage.textContent = "";
+
+        // Check folder first
+        if (!isCorrectFolder) {
+            saveMessage.textContent = "Please save the file in Documents > Digital Skills for Beginners > Homework";
+            practiceState.folderFirstTry = false;
+            return;
+        }
+
+        // Check for empty file name
+        if (fileName === "") {
+            saveMessage.textContent = "Please enter a file name.";
+            practiceState.fileNameFirstTry = false;
+            return;
+        }
+
+        // Check correct file name
+        if (!isCorrectFileName) {
+            saveMessage.textContent = "Please use the file name: Cover_Letter_V1";
+            practiceState.fileNameFirstTry = false;
+            return;
+        }
+
+        
+    })
 
     // Render folders in current location
     function renderFolders() {
