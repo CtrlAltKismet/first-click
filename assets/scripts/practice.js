@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const documentSection = document.getElementById("documentSection");
     const emailSection = document.getElementById("emailSection");
     const practiceProgress = document.getElementById("practiceProgress");
+    const practiceStatusMessage = document.getElementById("practiceStatusMessage");
 
     let currentPath = ["This PC"];
     let selectedFolder = null;
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     openSaveModalBtn.addEventListener("click", () => {
         saveModal.classList.remove("hidden");
+        saveMessage.textContent = "";
     });
 
     closeSaveModalBtn.addEventListener("click", () => {
@@ -85,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         practiceState.fileSaved = true;
 
-        saveMessage.textContent = "File saved successfully.";
+        practiceStatusMessage.textContent = "File saved successfully.";
         saveModal.classList.add("hidden");
         emailSection.classList.remove("hidden");
         practiceProgress.textContent = "Step 2 of 2: Send your email.";
