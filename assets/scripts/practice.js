@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentPath = ["This PC"];
     let selectedFolder = null;
+    let lastClickTime = 0;
+    let lastClickedFolder = null;
 
     const practiceState = {
         score: 0,
@@ -118,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         emailSection.scrollIntoView({ behavior: "smooth" });
     });
 
-    // Reveals email form when user preses 'Compose'
+    // Reveals email form when user presses 'Compose'
 
     composeEmailBtn.addEventListener("click", () => {
         emailForm.classList.remove("hidden");
@@ -180,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             hasMainMessage = messageLines.length > 0;
         }
-    
 
         emailMessage.textContent = "";
 
@@ -214,29 +215,29 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
         
-    if (practiceState.recipientFirstTry) {
-        practiceState.score += 1;
-    }
+            if (practiceState.recipientFirstTry) {
+                practiceState.score += 1;
+            }
 
-    if (practiceState.subjectFirstTry) {
-        practiceState.score += 1;
-    }
+            if (practiceState.subjectFirstTry) {
+                practiceState.score += 1;
+            }
 
-    if (practiceState.messageFirstTry) {
-        practiceState.score += 1;
-    }
+            if (practiceState.messageFirstTry) {
+                practiceState.score += 1;
+            }
 
-    if (practiceState.signOffFirstTry) {
-        practiceState.score += 1;
-    }
+            if (practiceState.signOffFirstTry) {
+                practiceState.score += 1;
+            }
 
-    if (practiceState.attachmentFirstTry) {
-        practiceState.score += 1;
-    }
+            if (practiceState.attachmentFirstTry) {
+                practiceState.score += 1;
+            }
 
-    practiceState.emailSent = true;
-    showResults();
-});
+            practiceState.emailSent = true;
+            showResults();
+        });
 
 
     // Render folders in current location
@@ -252,9 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
             btn.textContent = "📁 " + folder;
 
             // Double Click and single click with accessibility to touch devices
-
-            let lastClickTime = 0;
-            let lastClickedFolder = null;
 
             btn.addEventListener("click", () => {
                 const now = new Date().getTime();
