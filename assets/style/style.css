@@ -236,21 +236,16 @@ p {
 
 .mobile-menu-btn {
     display: none;
-    flex-direction: column;
-    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
 }
 
-.mobile-menu-btn span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background-color: var(--black);
-    border-radius: 2px;
-    transition: var(--transition);
+.menu-icon {
+    font-size: 1.5rem;
+    color: var(--black);
+    line-height: 1;
 }
 
 /* Hero Section */
@@ -1108,9 +1103,40 @@ p {
 
 /* Mobile Nav */
 
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-group {
+    flex: 1;
+}
+
+.mobile-menu-btn {
+    display: block;
+    margin-left: auto;
+}
+
 .main-nav {
     display: none;
+    width: 100%;
+    order: 3;
 }
+
+.main-nav.active {
+    display: block;
+    margin-top: 1rem;
+}
+
+.main-nav.active .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+}
+
 .mobile-menu-btn {
     display: flex;
 }
