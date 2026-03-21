@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const fileName = fileNameInput.value.trim();
 
         const correctPath = ["This PC", "Documents", "Digital Skills for Beginners", "Homework"];
-        const isCorrectFolder = JSON. stringify(currentPath) === JSON.stringify(correctPath);
+        const isCorrectFolder = JSON.stringify(currentPath) === JSON.stringify(correctPath);
         const isCorrectFileName = fileName === "Cover_Letter_V1";
 
         // Reset message each time
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
     attachFileBtn.addEventListener("click", () => {
         if (!practiceState.fileSaved) {
             attachmentStatus.textContent = "Save your file before attaching it.";
-            practiceState,attachmentFirstTry = false;
+            practiceState.attachmentFirstTry = false;
             return;
         }
 
