@@ -104,33 +104,32 @@
 
         <!-- Save As Window -->
         
-        <section class="practice-window practice-modal hidden" id="saveModal">
+    <section class="practice-window practice-modal hidden" id="saveModal">
             <div class="window-top-bar">
                 <span>💾 Save As</span>
             </div>
 
-            <div class="window-body">
-                <div class="explorer-toolbar">
-                    <button id="backFolderBtn" class="btn btn-secondary" type="button">Back</button>
-                    <p class="explorer-title">File Explorer</p>
-                </div>
+        <div class="window-body">
+            <div class="explorer-toolbar">
+                <button id="backFolderBtn" class="btn btn-secondary" type="button">Back</button>
+                <p class="explorer-title">File Explorer</p>
+            </div>
 
-                <div class="explorer-path-bar">
-                    <span class="path-label">Location:</span>
-                    <span id="explorerPath">This PC</span>
-                </div>
+            <div class="explorer-path-bar">
+                <span class="path-label">Location:</span>
+                <span id="explorerPath">This PC</span>
+            </div>
 
-                <div class="explorer-window">
-                    <div class="explorer-sidebar">
-                        <p><strong>Quick Access</strong></p>
-                        <ul>
-                            <li>Desktop</li>
-                            <li>Documents</li>
-                            <li>Downloads</li>
-                            <li>Pictures</li>
-                            <li>This PC</li>
-                        </ul>
-                    </div>
+            <div class="explorer-window">
+                <div class="explorer-sidebar">
+                    <p><strong>Quick Access</strong></p>
+                    <ul>
+                        <li>Desktop</li>
+                        <li>Documents</li>
+                        <li>Downloads</li>
+                        <li>Pictures</li>
+                        <li>This PC</li>
+                    </ul>
                 </div>
 
                 <div class="explorer-main">
@@ -150,13 +149,13 @@
             <input type="text" id="fileNameInput" name="fileNameInput" placeholder="Enter file name">
 
             <div class="modal-actions">
-                <button id="saveFileBtn" class="btn primary-btn">Save File</button>
-                <button id="closeSaveModalBtn" class="secondary-btn" type="button">Cancel</button>
+                <button id="saveFileBtn" class="btn btn-primary" type="button">Save File</button>
+                <button id="closeSaveModalBtn" class="btn btn-secondary" type="button">Cancel</button>
             </div>
 
-                <p id="saveMessage" class="form-message" aria-live="polite"></p>
-            </div>
-        </section>
+            <p id="saveMessage" class="form-message" aria-live="polite"></p>
+        </div>
+    </section>
 
         <!-- Email Window -->
 
