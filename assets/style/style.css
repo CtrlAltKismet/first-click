@@ -851,7 +851,6 @@ p {
     gap: 1rem;
 }
 
-
 .folder-btn {
     display: flex;
     flex-direction: column;
@@ -945,6 +944,10 @@ p {
     font-weight: 500;
     min-height: 1.5rem;
     color: var(--orange-600);
+}
+
+#sendEmailBtn {
+    margin-top: 1rem;
 }
 
 .practice-results {
