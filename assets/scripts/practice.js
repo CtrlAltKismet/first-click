@@ -292,6 +292,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    function showResults() {
+        const totalMarks = 7;
+        const percentage = Math.round((practiceState.score / totalMarks) * 100);
+
+        emailSection.classList.add("hidden");
+        resultsSection.classList.remove("hidden");
+
+        practiceScoreText.textContent = "Your final score is " + practiceState.score + " out of " + totalMarks + ".";
+        practicePercentageText.textContent = "Percentage: " + percentage + "%";
+
+        if (percentage >= 85) {
+            practiceFeedbackText.textContent = "Excellent work! You completed the task confidently and accurately.";
+        } else if (percentage >= 60) {
+            practiceFeedbackText.textContent = "Good effort! You completed the task, but a few corrections were needed.";
+        } else {
+            practiceFeedbackText.textContent = "Nice try. Review file saving, email writing and attachments to improve your score.";
+        }
+
+        practiceProgress.textContent = "Task complete.";
+        practiceStatusMessage.textContent = "Your practice task has been completed.";
+        resultsSection.scrollIntoView({ behavior: "smooth"});
+    }
+
     // INITIAL LOAD
     updatePath();
     renderFolders();
